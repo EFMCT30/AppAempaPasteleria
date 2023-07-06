@@ -1,0 +1,80 @@
+﻿@model AppAempaPasteleria.Models.Producto
+
+@{
+    ViewData["Title"] = "ProductoEliminar";
+}
+
+<div class="card">
+    <div class="card-header">
+        Eliminar Cliente
+    </div>
+    <div class="card-body">
+        <h3>¿Estás seguro de que quieres eliminar esto?</h3>
+        <div>
+            <hr />
+            <div class="row">
+                <div class="col-md-8">
+                    <dl class="row">
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.idProd)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.idProd)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.nomProd)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.nomProd)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.idIn)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.idIn)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.idCate)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.idCate)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.descProd)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.descProd)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.preProd)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.preProd)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.stockProd)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.stockProd)
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-md-4">
+                    <dl>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.fotoProd)
+                        </dt>
+                        <dd>
+                            <img src="@Url.Content(Model.fotoProd)" style="width: 200px; height: 200px">
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+
+            <form asp-action="ProductoEliminar">
+                <input type="submit" value="Eliminar" class="btn btn-outline-danger" />
+                <a asp-action="ListarProductos" asp-controller="Producto" class="btn btn-outline-warning"><i class="bi bi-arrow-return-left"></i> Volver a la lista</a>
+            </form>
+        </div>
+    </div>
+</div>

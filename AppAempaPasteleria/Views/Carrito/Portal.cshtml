@@ -1,0 +1,76 @@
+﻿@model IEnumerable<AppAempaPasteleria.Models.Producto>
+
+@{
+    ViewData["Title"] = "Portal";
+}
+
+<div class="card text-center">
+    <h2 class="card-header">Carrito de Productos</h2>
+    <div class="card-body">
+        <div>
+            <a asp-action="Canasta" class="btn btn-success"><i class="bi bi-basket2"></i> Ir a la Canasta</a>
+        </div>
+        <div style="text-align:right">
+            <form asp-action="Portal" asp-controller="Carrito" method="post">
+                <em>Filtrar</em>
+                <!--Html.TextBox("buscar","")-->
+                @Html.DropDownList("buscar", (IEnumerable<SelectListItem>)(ViewBag.cate), "Seleccionar")
+                <button class="btn btn-outline-warning"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+        <div>
+            @{
+                if (ViewBag.CANTIPRO == 0)
+                {
+                    <div class="text-break fw-bold">
+                        <p style="color:red">Ingrese los datos correctos para realizar la consulta o datos no existentes.</p>
+                    </div>
+                }
+                else
+                {
+                    <div class="text-break fw-bold">
+                        <p>Cantidad de Productos: @ViewBag.CANTIPRO</p>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 mb-4">
+            <div class="card h-100" style="border-radius:10px">
+                <img class="card-img-top" style="height: 200px" src="@Url.Content(item.fotoProd)" alt="item.fotoProd">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.nomProd)</h5>
+                    <br />
+                    <em>Código: </em> @Html.DisplayFor(modelItem => item.idProd)
+                    <br />
+                    <em>Descripción: </em>@Html.DisplayFor(modelItem => item.descProd)
+                    <br />
+                    <em>Categoría: </em> @Html.DisplayFor(modelItem => item.idCateD)
+                    <br />
+                    <em>Precio: </em> @Html.DisplayFor(modelItem => item.preProd)
+                    <br />
+                    <em>Stock: </em> @Html.DisplayFor(modelItem => item.stockProd)
+                    <br /><br />
+                    @if (item.stockProd > 0)
+                    {
+                        <div class="text-center">
+                            <a href="@Url.Action("Seleccionar", new { id = item.idProd })" class="btn btn-outline-danger"><i class="bi bi-bag-plus"></i> Agregar a la canasta</a>
+                        </div>
+                    }
+                    @if (item.stockProd <= 0)
+                    {
+                        <div class="text-center">
+                            <h5 style="color:red">AGOTADO</h5>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    }
+</div>

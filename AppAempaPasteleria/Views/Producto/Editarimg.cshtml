@@ -1,0 +1,76 @@
+﻿@model AppAempaPasteleria.Models.Producto
+
+@{
+    ViewData["Title"] = "Editarimg";
+}
+
+<div class="card" style="max-width:800px;margin: 0 auto">
+    <div class="card-header">
+        Editar Producto
+    </div>
+    <div class="card-body" style="width:100%">
+        <form class="row g-3" asp-action="Editarimg" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-12">
+                <label asp-for="idProd" class="control-label"></label>
+                <input asp-for="idProd" class="form-control" readonly="readonly" />
+                <span asp-validation-for="idProd" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="nomProd" class="control-label"></label>
+                <input asp-for="nomProd" class="form-control" readonly="readonly" />
+                <span asp-validation-for="nomProd" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="idIn" class="control-label"></label>
+                <select asp-for="idIn" asp-items="@ViewBag.insumo" class="form-select" readonly="readonly"></select>
+                <span asp-validation-for="idIn" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="idCate" class="control-label"></label>
+                <select asp-for="idCate" asp-items="@ViewBag.cate" class="form-select" readonly="readonly"></select>
+                <span asp-validation-for="idCate" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="descProd" class="control-label"></label>
+                <input asp-for="descProd" class="form-control" readonly="readonly" />
+                <span asp-validation-for="descProd" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <img style="width: 100px; height: 100px" src="@Url.Content(Model.fotoProd)">
+            </div>
+            <div class="col-md-6">
+                <label asp-for="fotoProd" class="control-label"></label>
+                <input asp-for="fotoProd" type="file" class="form-control-file">
+            </div>
+            <div class="col-md-6">
+                <label asp-for="preProd" class="control-label"></label>
+                <input asp-for="preProd" class="form-control" readonly="readonly" />
+                <span asp-validation-for="preProd" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="stockProd" class="control-label"></label>
+                <input asp-for="stockProd" class="form-control" readonly="readonly" />
+                <span asp-validation-for="stockProd" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <input type="submit" value="Actualizar" class="btn btn-outline-primary" />
+                <a asp-action="ListarProductos" asp-controller="Producto" class="btn btn-outline-warning"><i class="bi bi-arrow-return-left"></i> Volver a la lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+@if (!string.IsNullOrEmpty(ViewBag.mensaje))
+{
+    <div style="max-width:800px;margin: 0 auto">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @ViewBag.mensaje
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

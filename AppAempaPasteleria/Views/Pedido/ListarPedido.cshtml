@@ -1,0 +1,146 @@
+﻿@model IEnumerable<AppAempaPasteleria.Models.Pedido>
+@{
+    ViewData["Title"] = "ListarPedido";
+}
+
+<div class="card text-center">
+    <div class="card-header">
+        <h3>Lista de Pedidos</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-6 col-md-8">
+                <form asp-action="ExportarExcel" asp-controller="Carrito" method="post">
+                    <button class="btn btn-outline-success" onclick="mostrarExitoso()" type="submit"><i class="bi bi-file-earmark-excel"></i> Exportar Excel</button>
+                </form>
+            </div>
+            <div class="col-sm-6 col-md-4 text-right">
+                <form asp-action="ListarPedido" asp-controller="Pedido" method="post">
+                    <div class="row">
+                        <div class="col">
+                            @Html.TextBox("buscar", "", new { @class = "form-control form-control-sm", placeholder = "Buscar por estado" })
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-outline-warning"><i class="bi bi-search"></i> Buscar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br />
+        @{
+            if (ViewBag.Cantidad == 0)
+            {
+                <div class="text-break fw-bold">
+                    <p style="color:red">Ingrese los datos correctos para realizar la consulta o datos no existentes.</p>
+                </div>
+            }
+            else
+            {
+                <div class="text-break fw-bold">
+                    Cantidad de Pedidos: @ViewBag.Cantidad
+                </div>
+            }
+        }
+        <br />
+        <div id="alertExitoso" style="display:none" class="alert alert-success alert-dismissible fade show" role="alert">
+            <p>La exportación se realizó con éxito.</p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.idPed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.fechaPed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NompPro)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NomCli)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.metodoPed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EntregaPed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EstadoPed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.precioU)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cantidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.monto)
+                </th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idPed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fechaPed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NompPro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomCli)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.metodoPed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EntregaPed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EstadoPed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.precioU)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cantidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.monto)
+                    </td>
+                    <td>
+                        @if (item.EstadoPed == "Completo")
+                        {
+                            <i style="color:green" class="bi bi-check-circle-fill" onclick="window.location.href='@Url.Action("EditarPedido", new { id = item.idPed })'"></i>
+                        }
+                        else if (item.EstadoPed == "Pendiente")
+                        {
+                            <i class="bi bi-info-circle-fill" style="color:red" onclick="window.location.href='@Url.Action("EditarPedido", new { id = item.idPed })'"></i>
+                        } |
+                        <i class="bi bi-trash" onclick="window.location.href='@Url.Action("PedidoEliminar", new { id = item.idPed })'"></i>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@{
+    <script>
+        function mostrarExitoso() {
+            var divAlert = document.getElementById('alertExitoso');
+            divAlert.style.display = 'block';
+        }
+    </script>
+
+}

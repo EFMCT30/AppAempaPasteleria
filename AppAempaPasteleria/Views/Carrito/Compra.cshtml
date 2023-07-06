@@ -1,0 +1,79 @@
+﻿@model AppAempaPasteleria.Models.Pedido
+
+@{
+    ViewData["Title"] = "Compra";
+}
+
+<div class="card" style="max-width:800px;margin: 0 auto">
+    <div class="card-header">
+        Registrar Pedido
+    </div>
+    <div class="card-body" style="width:100%">
+        <form class="row g-3" asp-action="Compra" asp-controller="Carrito" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-md-6">
+                <label asp-for="idPed" class="control-label"></label>
+                <input asp-for="idPed" name="idPed" class="form-control" />
+                <span asp-validation-for="idPed" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="idCli" class="control-label"></label>
+                <select asp-for="idCli" name="codCli" asp-items="@ViewBag.clientes" class="form-select"></select>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="metodoPed" class="control-label"></label>
+                <select name="metodoPed" class="form-select" aria-label="Default select example">
+                    <option value="" selected></option>
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Tarjeta">Tarjeta</option>
+                    <option value="Transferencia">Transferencia</option>
+                    <option value="Yape">Yape</option>
+                    <option value="Plin">Plin</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="EntregaPed" class="control-label"></label>
+                <select name="EntregaPed" class="form-select" aria-label="Default select example">
+                    <option value="" selected></option>
+                    <option value="Recojo en Tienda">Recojo en Tienda</option>
+                    <option value="Delivery">Delivery</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="EstadoPed" class="control-label"></label>
+                <select name="EstadoPed" class="form-select" aria-label="Default select example">
+                    <option value="Completo" selected>Completo</option>
+                    <option value="Pendiente">Pendiente</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <input type="submit" value="Registrar Pedido" class="btn btn-primary" />
+                <a asp-action="Portal" asp-controller="Carrito" class="btn btn-success">Seguir Comprando</a>
+                <a asp-action="Canasta" asp-controller="Carrito" class="btn btn-success">Canasta</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <script>
+        $(document).ready(function () {
+            alert('@TempData["ErrorMessage"]');
+        });
+    </script>
+}
+
+
+@if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+{
+    <script>
+        $(document).ready(function () {
+            alert('@ViewBag.SuccessMessage');
+        });
+    </script>
+}

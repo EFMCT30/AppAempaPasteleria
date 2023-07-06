@@ -1,0 +1,112 @@
+﻿@model IEnumerable<AppAempaPasteleria.Models.Cliente>
+
+@{
+    ViewData["Title"] = "ListarClientes";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3>Lista de Clientes</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-6 col-md-8">
+                <a asp-action="GuardarClientes" asp-controller="Cliente" class="btn btn-success"><i class="bi bi-plus-circle"></i> Crear Nuevo</a>
+            </div>
+            <div class="col-sm-6 col-md-4 text-right">
+                <form asp-action="ListarClientes" asp-controller="Cliente" method="post">
+                    <div class="row">
+                        <div class="col">
+                            @Html.TextBox("buscar", "", new { @class = "form-control form-control-sm", placeholder = "Buscar Nombre del Cliente" })
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-outline-warning"><i class="bi bi-search"></i> Buscar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br />
+        @{
+            if (ViewBag.CANTIDADCLI == 0)
+            {
+                <div class="text-break fw-bold">
+                    <p style="color:red">Ingrese los datos correctos para realizar la consulta o datos no existentes.</p>
+                </div>
+            }
+            else
+            {
+                <div class="text-break fw-bold">
+                    Cantidad de Registros: @ViewBag.CANTIDADCLI
+                </div>
+            }
+        }
+    </div>
+
+    <table id="tablaClientes" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.codCli)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nomCli)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.apeCli)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dniCli)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dirCli)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.idPaisD)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.correoCli)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.telCli)
+                </th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.codCli)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nomCli)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.apeCli)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dniCli)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dirCli)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idPaisD)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.correoCli)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.telCli)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("EditarClientes", new { id = item.codCli })" class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i> Editar</a> |
+                        <a href="@Url.Action("ClientesEliminar", new { id = item.codCli })" class="btn btn-outline-danger"><i class="bi bi-trash"></i> Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

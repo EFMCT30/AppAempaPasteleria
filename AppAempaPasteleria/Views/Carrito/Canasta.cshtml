@@ -1,0 +1,94 @@
+﻿@model IEnumerable<AppAempaPasteleria.Models.Registro>
+
+@{
+    ViewData["Title"] = "Canasta";
+}
+<div class="card">
+    <div class="card-header">
+        <h3>Canasta de Productos</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-6 col-md-8">
+                <a asp-action="Portal" class="btn btn-danger"><i class="bi bi-bag-plus"></i> Seguir Comprando</a> |
+                @{
+                    if (Model != null && Model.Any())
+                    {
+                        <a asp-action="Compra" class="btn btn-success"><i class="bi bi-bag-plus"></i> Comprar</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-success disabled" disabled><i class="bi bi-bag-plus"></i> Comprar</a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.idProd)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nomProd)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.fotoProd)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.descProd)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.preProd)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.stockProd)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.monto)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idProd)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nomProd)
+                    </td>
+                    <td>
+                        <img src="@Url.Content(item.fotoProd)" alt="item.fotoProd" style="width:60px; height: 60px" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.descProd)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.preProd)
+                    </td>
+                    <form asp-action="Actualizar" asp-controller="Carrito" method="post">
+                        @Html.Hidden("codigo",item.idProd)
+                    <td>
+                            @Html.TextBox("cantidad", item.stockProd, new {type="number", min=1 ,@class="form-control"})
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.monto)
+                    </td>
+                    <td>
+                        <input type="submit" value="Actualizar" class="btn btn-info"> |
+                            @Html.ActionLink("Eliminar", "Eliminar", new { id=item.idProd }, new {@class="btn btn-info" ,onclick = "return confirm('¿Estás seguro de que deseas eliminar este producto?');" })
+                    </td>
+                    </form>
+                </tr>
+            }
+            <tr>
+                <td colspan="6"><strong>Monto Total del Pedido :</strong></td>
+                <td>@Model.Sum(x => x.monto).ToString("#####.#0")</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,73 @@
+﻿@model AppAempaPasteleria.Models.Cliente
+
+@{
+    ViewData["Title"] = "EditarClientes";
+}
+
+<div class="card" style="max-width:800px;margin: 0 auto">
+    <div class="card-header">
+        Editar Cliente
+    </div>
+    <div class="card-body" style="width:100%">
+        <form class="row g-3" asp-action="EditarClientes">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-12">
+                <label asp-for="codCli" class="control-label"></label>
+                <input asp-for="codCli" class="form-control" readonly="readonly" />
+                <span asp-validation-for="codCli" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="nomCli" class="control-label"></label>
+                <input asp-for="nomCli" class="form-control" />
+                <span asp-validation-for="nomCli" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="apeCli" class="control-label"></label>
+                <input asp-for="apeCli" class="form-control" />
+                <span asp-validation-for="apeCli" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="dniCli" class="control-label"></label>
+                <input asp-for="dniCli" class="form-control" />
+                <span asp-validation-for="dniCli" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="idPais" class="control-label"></label>
+                <select asp-for="idPais" asp-items="@ViewBag.paises" class="form-select"></select>
+            </div>
+            <div class="col-12">
+                <label asp-for="dirCli" class="control-label"></label>
+                <input asp-for="dirCli" class="form-control" />
+                <span asp-validation-for="dirCli" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="correoCli" class="control-label"></label>
+                <input asp-for="correoCli" class="form-control" />
+                <span asp-validation-for="correoCli" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="telCli" class="control-label"></label>
+                <input asp-for="telCli" class="form-control" />
+                <span asp-validation-for="telCli" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <input type="submit" value="Actualizar" class="btn btn-outline-primary" />
+                <a asp-action="ListarClientes" asp-controller="Cliente" class="btn btn-outline-warning"><i class="bi bi-arrow-return-left"></i> Volver a la lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+
+@if (!string.IsNullOrEmpty(ViewBag.mensaje))
+{
+    <div style="max-width:800px;margin: 0 auto">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @ViewBag.mensaje
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

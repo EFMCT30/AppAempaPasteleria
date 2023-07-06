@@ -1,0 +1,67 @@
+﻿@model AppAempaPasteleria.Models.Pedido
+
+@{
+    ViewData["Title"] = "PedidoEliminar";
+}
+
+<div class="card">
+    <div class="card-header">
+        Eliminar Pedido
+    </div>
+    <div class="card-body">
+        <h3>¿Estás seguro de que quieres eliminar esto?</h3>
+        <div>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.idPed)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.idPed)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.NompPro)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.NompPro)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.NomCli)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.NomCli)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.metodoPed)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.metodoPed)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.EntregaPed)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.EntregaPed)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.EstadoPed)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.EstadoPed)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.monto)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.monto)
+                </dd>
+            </dl>
+
+            <form asp-action="PedidoEliminar">
+                <input type="submit" value="Eliminar" class="btn btn-outline-danger" /> |
+                <a asp-action="ListarPedido" asp-controller="Pedido" class="btn btn-outline-warning"><i class="bi bi-arrow-return-left"></i> Volver a la lista</a>
+            </form>
+
+        </div>
+    </div>
+</div>

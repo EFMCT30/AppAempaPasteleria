@@ -1,0 +1,91 @@
+﻿@model IEnumerable<AppAempaPasteleria.Models.Insumo>
+
+@{
+    ViewData["Title"] = "ListarInsumos";
+}
+<div class="card">
+    <div class="card-header">
+        <h3>Lista de Insumos</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-6 col-md-8">
+                <a asp-action="GuardarInsumos" asp-controller="Insumo" class="btn btn-success"><i class="bi bi-plus-circle"></i> Crear Nuevo</a>
+            </div>
+            <div class="col-sm-6 col-md-4 text-right">
+                <form asp-action="ListarInsumos" asp-controller="Insumo" method="post">
+                    <div class="row">
+                        <div class="col">
+                            @Html.TextBox("buscar", "", new { @class = "form-control form-control-sm", placeholder = "Buscar Descripción" })
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-outline-warning"><i class="bi bi-search"></i> Buscar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br />
+        @{
+            if (ViewBag.CANTIINSU == 0)
+            {
+                <div class="text-break fw-bold">
+                    <p style="color:red">Ingrese los datos correctos para realizar la consulta o datos no existentes.</p>
+                </div>
+            }
+            else
+            {
+                <div class="text-break fw-bold">
+                    Cantidad de Registros: @ViewBag.CANTIINSU
+                </div>
+            }
+        }
+    </div>
+    <table id="tablaInsumos" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.desIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idProvD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecComIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecVenIn)
+            </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.desIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idProvD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecComIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecVenIn)
+            </td>
+            <td>
+               <a href="@Url.Action("EditarInsumos", new { id = item.idIn })" class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i> Editar</a> |
+               <a href="@Url.Action("InsumoEliminar", new { id = item.idIn })" class="btn btn-outline-danger"><i class="bi bi-trash"></i> Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

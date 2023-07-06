@@ -1,0 +1,149 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AppAempaPasteleria
+build_property.RootNamespace = AppAempaPasteleria
+build_property.ProjectDir = C:\Users\Castillo\Desktop\DesarrolloWeb1\AppAempaPasteleria\AppAempaPasteleria\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Castillo\Desktop\DesarrolloWeb1\AppAempaPasteleria\AppAempaPasteleria
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Acceso/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Carrito/Canasta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycml0b1xDYW5hc3RhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Carrito/Compra.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycml0b1xDb21wcmEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Carrito/Portal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycml0b1xQb3J0YWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Carrito/Seleccionar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycml0b1xTZWxlY2Npb25hci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Cliente/ClientesEliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxDbGllbnRlc0VsaW1pbmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Cliente/EditarClientes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxFZGl0YXJDbGllbnRlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Cliente/GuardarClientes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxHdWFyZGFyQ2xpZW50ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Cliente/ListarClientes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxMaXN0YXJDbGllbnRlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Home/Panel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYW5lbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Insumo/EditarInsumos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdW1vXEVkaXRhckluc3Vtb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Insumo/GuardarInsumos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdW1vXEd1YXJkYXJJbnN1bW9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Insumo/InsumoEliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdW1vXEluc3Vtb0VsaW1pbmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Insumo/ListarInsumos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdW1vXExpc3Rhckluc3Vtb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Pedido/EditarPedido.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXEVkaXRhclBlZGlkby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Pedido/ListarPedido.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXExpc3RhclBlZGlkby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Pedido/PedidoEliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXFBlZGlkb0VsaW1pbmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Producto/Editarimg.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cRWRpdGFyaW1nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Producto/EditarProductos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cRWRpdGFyUHJvZHVjdG9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Producto/GuardarProductos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cR3VhcmRhclByb2R1Y3Rvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Producto/ListarProductos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cTGlzdGFyUHJvZHVjdG9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Producto/ProductoEliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cUHJvZHVjdG9FbGltaW5hci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Proveedor/EditarProveedores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXEVkaXRhclByb3ZlZWRvcmVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Proveedor/GuardarProveedores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXEd1YXJkYXJQcm92ZWVkb3Jlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Proveedor/ListarProveedores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXExpc3RhclByb3ZlZWRvcmVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Proveedor/ProveedorEliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXFByb3ZlZWRvckVsaW1pbmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Castillo/Desktop/DesarrolloWeb1/AppAempaPasteleria/AppAempaPasteleria/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-rys2n9vbme

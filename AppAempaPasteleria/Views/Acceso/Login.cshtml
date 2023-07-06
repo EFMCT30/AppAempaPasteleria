@@ -1,0 +1,66 @@
+﻿@model AppAempaPasteleria.Models.Usuario;
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Login</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<style>
+		body {
+			background-color: #ffd9e0;
+			background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23afafaf' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+			font-size: small;
+		}
+
+		.columnaimagen {
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<div class="container w-75 mt-5 rounded shadow mb-lg-5">
+		<div class="row align-items-stretch">
+			<!--La imagen esta vinculada con el url de la imagen que se desea colocar-->
+			<div class="col columnaimagen d-none d-lg-block col-md-5 col-lg-5 col-xl-6" style="background-image: url('https://smoda.elpais.com/wp-content/uploads/2017/03/cover48.jpg')">
+			</div>
+			<div class="col bg-white p-5 rounded-end">
+				<br>
+				<h2 class="fw-bold text-center py-5">Inicia Sesión</h2>
+
+				<form asp-controller="Acceso" asp-action="Login" method="post">
+					<div clss="mb-4">
+						<label for="Username" class="form-label">Usuario</label>
+						<input type="text" placeholder="Usuario" class="form-control" asp-for="Usuarios" />
+					</div>
+					<br />
+					<div clss="mb-4">
+						<label for="Password" class="form-label">Contraseña</label>
+						<input type="password" placeholder="Contraseña" class="form-control" asp-for="Clave" />
+					</div>
+					<br>
+					<div class="d-grid">
+						<button type="submit" class="btn btn-primary">Ingresar</button>
+					</div>
+					<br>
+					<br>
+				</form>
+				<!--Mensaje que se hace visible al momento de colocar mal el usuario o contraseña-->
+				@if (!string.IsNullOrEmpty(ViewBag.mensaje))
+				{
+					<div class="alert alert-danger text-break fw-bold" role="alert">
+						@ViewBag.mensaje
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

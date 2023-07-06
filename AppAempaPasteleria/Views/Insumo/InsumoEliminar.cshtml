@@ -1,0 +1,53 @@
+﻿@model AppAempaPasteleria.Models.Insumo
+
+@{
+    ViewData["Title"] = "InsumoEliminar";
+}
+
+<div class="card">
+    <div class="card-header">
+        Eliminar Insumo
+    </div>
+    <h3>¿Estás seguro de que quieres eliminar esto?</h3>
+    <div class="card-body">
+
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.idIn)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.idIn)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.desIn)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.desIn)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.idProv)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.idProv)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.fecComIn)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.fecComIn)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.fecVenIn)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.fecVenIn)
+            </dd>
+        </dl>
+
+        <form asp-action="InsumoEliminar">
+            <input type="submit" value="Eliminar" class="btn btn-outline-danger" /> |
+            <a asp-action="ListarInsumos" asp-controller="Insumo" class="btn btn-outline-warning"><i class="bi bi-arrow-return-left"></i> Volver a la lista</a>
+        </form>
+    </div>
+</div>

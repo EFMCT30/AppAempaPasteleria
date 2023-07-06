@@ -1,0 +1,61 @@
+﻿@model AppAempaPasteleria.Models.Pedido
+
+@{
+    ViewData["Title"] = "EditarPedido";
+}
+
+<div class="card" style="max-width:800px;margin: 0 auto">
+    <div class="card-header">
+        Editar Estado Pedido
+    </div>
+    <div class="card-body" style="width:100%">
+        <form class="row g-3" asp-action="EditarPedido">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-md-6">
+                <label asp-for="idPed" class="control-label"></label>
+                <input asp-for="idPed" class="form-control" readonly="readonly" />
+                <span asp-validation-for="idPed" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="idCli" class="control-label"></label>
+                <input asp-for="idCli" class="form-control" readonly="readonly" />
+                <span asp-validation-for="idCli" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="metodoPed" class="control-label"></label>
+                <input asp-for="metodoPed" class="form-control" readonly="readonly" />
+                <span asp-validation-for="metodoPed" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="EntregaPed" class="control-label"></label>
+                <input asp-for="EntregaPed" class="form-control" readonly="readonly" />
+                <span asp-validation-for="EntregaPed" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="EstadoPed" class="control-label"></label>
+                <select name="EstadoPed" class="form-select" aria-label="Default select example">
+                    <option value="Completo" selected>Completo</option>
+                    <option value="Pendiente">Pendiente</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <input type="submit" value="Actualizar" class="btn btn-outline-primary" />
+                <a asp-action="ListarPedido" asp-controller="Pedido" class="btn btn-outline-warning"><i class="bi bi-arrow-return-left"></i> Volver a la lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+
+@if (!string.IsNullOrEmpty(ViewBag.mensaje))
+{
+    <div style="max-width:800px;margin: 0 auto">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @ViewBag.mensaje
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+}
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

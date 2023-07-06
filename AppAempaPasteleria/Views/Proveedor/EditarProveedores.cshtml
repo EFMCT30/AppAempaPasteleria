@@ -1,0 +1,68 @@
+﻿@model AppAempaPasteleria.Models.Proveedor
+
+@{
+    ViewData["Title"] = "EditarProveedores";
+}
+
+<div class="card" style="max-width:800px;margin: 0 auto">
+    <div class="card-header">
+        Editar Proveedor
+    </div>
+    <div class="card-body" style="width:100%">
+        <form class="row g-3" asp-action="EditarProveedores">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-md-6">
+                <label asp-for="idProv" class="control-label"></label>
+                <input asp-for="idProv" class="form-control" readonly="readonly" />
+                <span asp-validation-for="idProv" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="razProv" class="control-label"></label>
+                <input asp-for="razProv" class="form-control" />
+                <span asp-validation-for="razProv" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="rucProv" class="control-label"></label>
+                <input asp-for="rucProv" class="form-control" />
+                <span asp-validation-for="rucProv" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="telProv" class="control-label"></label>
+                <input asp-for="telProv" class="form-control" />
+                <span asp-validation-for="telProv" class="text-danger"></span>
+            </div>
+            <div class="col-12">
+                <label asp-for="direcProv" class="control-label"></label>
+                <input asp-for="direcProv" class="form-control" />
+                <span asp-validation-for="direcProv" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="correoProv" class="control-label"></label>
+                <input asp-for="correoProv" class="form-control" />
+                <span asp-validation-for="correoProv" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="idPais" class="control-label"></label>
+                <select asp-for="idPais" asp-items="@ViewBag.paises" class="form-select"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Actualizar" class="btn btn-outline-primary" />
+                <a asp-action="ListarProveedores" asp-controller="Proveedor" class="btn btn-outline-warning"><i class="bi bi-arrow-return-left"></i> Volver a la lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+@if (!string.IsNullOrEmpty(ViewBag.mensaje))
+{
+    <div style="max-width:800px;margin: 0 auto">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @ViewBag.mensaje
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,72 @@
+﻿@model AppAempaPasteleria.Models.Cliente
+
+@{
+    ViewData["Title"] = "ClientesEliminar";
+}
+
+<div class="card">
+    <div class="card-header">
+        Eliminar Cliente
+    </div>
+    <div class="card-body">
+        <h3>¿Estás seguro de que quieres eliminar esto?</h3>
+        <div>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.codCli)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.codCli)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.nomCli)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.nomCli)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.apeCli)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.apeCli)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.dniCli)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.dniCli)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.dirCli)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.dirCli)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.idPais)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.idPais)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.correoCli)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.correoCli)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.telCli)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.telCli)
+                </dd>
+            </dl>
+
+            <form asp-action="ClientesEliminar" id="formularioEliCli">
+                <input type="submit" value="Eliminar" class="btn btn-outline-danger" /> |
+                <a asp-action="ListarClientes" asp-controller="Cliente" class="btn btn-outline-warning"><i class="bi bi-arrow-return-left"></i> Volver a la lista</a>
+            </form>
+        </div>
+    </div>
+</div>

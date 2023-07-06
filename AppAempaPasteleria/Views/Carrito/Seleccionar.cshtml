@@ -1,0 +1,121 @@
+﻿@model AppAempaPasteleria.Models.Producto
+
+@{
+    ViewData["Title"] = "Seleccionar";
+    bool desactivarBtn = ViewBag.desactivarBtn ?? false;
+}
+
+<div class="card">
+    <div class="card-header">
+        Seleccionar Producto
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-8">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.idProd)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.idProd)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.nomProd)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.nomProd)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.idIn)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.idIn)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.idCateD)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.idCateD)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.descProd)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.descProd)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.preProd)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.preProd)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.stockProd)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.stockProd)
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-md-4">
+                <div class="text-right">
+                    <dl>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.fotoProd)
+                        </dt>
+                        <dd>
+                            <img src="@Url.Content(Model.fotoProd)" style="width: 200px; height: 200px">
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div>
+            <form id="agregarForm" asp-action="Seleccionar" method="post">
+                @Html.Hidden("codigo",Model.idProd)
+                <div>
+                    <em>Ingrese la Cantidad:</em>
+                    <button type="button" onclick="decrementarCantidad()" style="font-size:25px;background: none; border: none; padding: 0; margin: 0;"><i class="bi bi-dash-circle"></i></button>
+                    @Html.TextBox("cantidad",1,new{type="number",min=1, max=Model.stockProd})
+                    <button type="button" onclick="incrementarCantidad()" style="font-size:25px;background: none; border: none; padding: 0; margin: 0;"><i class="bi bi-plus-circle"></i></button>
+                </div>
+                <br />
+                <div>
+                    <input id="agregarBtn" type="submit" value="Agregar" class="btn btn-outline-primary" @(desactivarBtn ? "disabled" : "") />
+                    <a asp-action="Portal" class="btn btn-outline-success">Retornar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<br />
+@if (!string.IsNullOrEmpty(ViewBag.mensaje))
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @ViewBag.mensaje
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<script>
+    function incrementarCantidad() {
+        var cantidad = parseInt(document.getElementById("cantidad").value);
+        var stock = parseInt('@Model.stockProd');
+
+        if (cantidad < stock) {
+            cantidad++;
+        }
+
+        document.getElementById("cantidad").value = cantidad;
+    }
+
+    function decrementarCantidad() {
+        var cantidad = parseInt(document.getElementById("cantidad").value);
+
+        if (cantidad > 1) {
+            cantidad--;
+        }
+
+        document.getElementById("cantidad").value = cantidad;
+    }
+</script>
